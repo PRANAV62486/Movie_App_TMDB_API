@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movies App</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="released_on">Released On : %1s</string>
+    <string name="rating">User Rating : %1.3s/10</string>
+    <string name="desc">DESCRIPTION : \n%1s</string>
+</resources>
