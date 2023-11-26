@@ -13,5 +13,8 @@ Key Features :
 10. Room for offline support
 11. Infinite scrolling with paging 3
 
-Working Video: 
+Working App Video: 
 https://drive.google.com/file/d/1XCUyUp88pWlcZuFiXBJEczaicKRDCVWd/view
+
+Apk File : 
+https://github.com/PRANAV62486/Movie_App_TMDB_API/tree/master/app/build/outputs/apk/debug
