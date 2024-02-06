@@ -21,22 +21,22 @@ class MovieDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding= FragmentMovieDetailsBinding.inflate(inflater, container, false)
+        binding = FragmentMovieDetailsBinding.inflate(inflater, container, false)
 
         bindViews(arguments?.get("Movie") as Movie)
 
         return binding.root
     }
 
-    private fun bindViews(movie: Movie){
+    private fun bindViews(movie: Movie) {
         try {
             Glide.with(requireContext())
-                .load(ImageMapper(imagePath = movie.posterPath?:"").getFullImageUrl())
+                .load(ImageMapper(imagePath = movie.posterPath ?: "").getFullImageUrl())
                 .placeholder(R.drawable.baseline_image_24)
                 .into(binding.iv)
 
             binding.title.text = movie.title
-            binding.desc.text = getString(R.string.desc,movie.overview)
+            binding.desc.text = getString(R.string.desc, movie.overview)
             binding.releasedOn.text = getString(R.string.released_on, movie.releaseDate)
             binding.rating.text = getString(R.string.rating, movie.voteAverage.toString())
         } catch (_: Exception) {

@@ -57,6 +57,7 @@ class MovieListFragment : Fragment(), MovieClickCallback {
     }
 
     override fun onMovieClick(movie: Movie) {
+
         requireActivity().supportFragmentManager.beginTransaction()
             .add(R.id.fragmentContainer,MovieDetailsFragment.newInstance(movie))
             .addToBackStack(MovieListFragment::class.java.name)
