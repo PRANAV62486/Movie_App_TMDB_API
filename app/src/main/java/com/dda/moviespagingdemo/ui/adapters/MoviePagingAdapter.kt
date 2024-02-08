@@ -6,14 +6,15 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.dda.moviespagingdemo.R
 import com.bumptech.glide.Glide
+import com.dda.moviespagingdemo.R
 import com.dda.moviespagingdemo.databinding.ItemMovieLayoutBinding
 import com.dda.moviespagingdemo.models.MoviesRemoteResponse.Movie
-import com.dda.moviespagingdemo.utils.IMAGE_BASE_URL
-import com.dda.moviespagingdemo.utils.IMAGE_SIZE
 import com.dda.moviespagingdemo.utils.ImageMapper
 import com.dda.moviespagingdemo.utils.MovieClickCallback
+import com.dda.moviespagingdemo.utils.Utilities
+import java.text.ParseException
+import java.text.SimpleDateFormat
 
 class MoviePagingAdapter(val cb : MovieClickCallback) :
     PagingDataAdapter<Movie, MoviePagingAdapter.MoviesViewHolder>(COMPARATOR) {
@@ -32,7 +33,7 @@ class MoviePagingAdapter(val cb : MovieClickCallback) :
                 .placeholder(R.drawable.baseline_image_24)
                 .into(holder.binding.ivThumbnail)
 
-            holder.binding.releaseDate.text = item.releaseDate
+            holder.binding.releaseDate.text = Utilities.formatDateString(item.releaseDate)
 
             holder.binding.root.setOnClickListener {
                 cb.onMovieClick(item)
@@ -66,6 +67,8 @@ class MoviePagingAdapter(val cb : MovieClickCallback) :
             }
         }
     }
+
+
 }
 
 
